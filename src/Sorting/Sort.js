@@ -8,6 +8,8 @@ import { insertionSort } from "./InsertionSort";
 export const Sort = () => {
   const [randomArray, setRandomArray] = useState([]);
   const [isRunning, setIsRunning] = useState(false);
+  const [resetStatus, setResetStatus] = useState(true);
+
   const arraySize = 60;
   let navigate = useNavigate();
   let speed = 12;
@@ -20,21 +22,23 @@ export const Sort = () => {
     return Math.floor(Math.random() * (end - start + 1) + start);
   };
 
-  const generateNewArray = () => {
+  const resetArray = () => {
     const newArray = [];
-    setRandomArray([]);
     for (let i = 0; i < arraySize; i++) {
       newArray.push(generateRandomNumber(10, 500));
     }
     setRandomArray(newArray);
+    setResetStatus(false);
     for (let i = 0; i < randomArray.length; i++) {
       bars[i].style.backgroundColor = "black";
     }
   };
 
   useEffect(() => {
-    generateNewArray();
-  }, []);
+    if (resetStatus) {
+      resetArray();
+    }
+  }, [resetStatus]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <>
@@ -57,7 +61,7 @@ export const Sort = () => {
             <Button
               variant="contained"
               onClick={() => {
-                generateNewArray();
+                setResetStatus(true);
               }}
               color="secondary"
               disabled={isRunning}

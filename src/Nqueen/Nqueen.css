@@ -1,0 +1,12 @@
+.chessboard {
+  display: grid;
+  grid-gap: 0;
+  grid-auto-flow: row;
+  margin-top: 1rem;
+}
+.board-piece {
+  border: 1px solid black;
+  color: red;
+  text-align: center;
+  font-size: 2rem;
+}

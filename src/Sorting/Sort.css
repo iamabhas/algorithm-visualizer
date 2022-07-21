@@ -1,0 +1,20 @@
+.array-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 500px;
+  margin-top: 0.5rem;
+}
+
+.sort-body {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.5rem;
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+.button-container button {
+  margin: 0.2rem;
+}

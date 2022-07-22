@@ -23,7 +23,7 @@ export const About = () => {
             Made by Abhas K
           </h2>
           <h3 style={{ textAlign: "center" }}>
-            - Algorithms used : Bubble Sort , Binary Search , Backtracking
+            - Algorithms used : Bubble Sort ,Selection Sort,Insertion Sort, Binary Search , Backtracking
           </h3>
           <h3 style={{ textAlign: "center" }}>
             - This project was inspired by{" "}

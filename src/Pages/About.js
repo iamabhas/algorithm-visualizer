@@ -2,7 +2,6 @@ import React from "react";
 import Alert from "@mui/material/Alert";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
-import { red } from "@mui/material/colors";
 export const About = () => {
   let navigate = useNavigate();
   return (

@@ -9,7 +9,7 @@ export const Home = () => {
     <>
       <main className="main-container">
         <div className="navbar">
-          <h1>Algorithm Visualizer by Abhas K</h1>
+          <h1>Algorithm Visualizer by Abhas Khanal</h1>
           <Button
             variant="contained"
             onClick={() => {

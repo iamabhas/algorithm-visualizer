@@ -5,6 +5,7 @@ import { Button } from "@mui/material";
 import { bubbleSort } from "./BubbleSort";
 import { selectionSort } from "./SelectionSort";
 import { insertionSort } from "./InsertionSort";
+import { bogoSort } from "./BogoSort";
 export const Sort = () => {
   const [randomArray, setRandomArray] = useState([]);
   const [isRunning, setIsRunning] = useState(false);
@@ -45,6 +46,10 @@ export const Sort = () => {
       <div className="main-container">
         <div className="navbar">
           <h1>Sorting Visualizer</h1>
+          <h3 style={{ color: "red" }}>
+            ! The time complexity of bogo sort is O((n+1)!) which is near
+            unsolvable !
+          </h3>
           <div className="button-container">
             <Button
               variant="contained"
@@ -97,6 +102,16 @@ export const Sort = () => {
               disabled={isRunning}
             >
               Selection Sort !
+            </Button>
+            <Button
+              variant="contained"
+              color="error"
+              onClick={() => {
+                bogoSort(randomArray, setIsRunning, speed, delay, bars);
+              }}
+              disabled={isRunning}
+            >
+              Bogo Sort!
             </Button>
           </div>
           <div className="array-container">

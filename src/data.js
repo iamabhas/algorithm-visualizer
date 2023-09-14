@@ -8,8 +8,8 @@ export const algorithms = [
   },
   {
     id: 1,
-    name: "Nqueen (in progress...)",
-    info: "Visualize Nqueen problem by your self",
+    name: "Nqueen",
+    info: "Visualize Nqueen problem by your self . Place Queens and solve ",
     img: "https://media.geeksforgeeks.org/wp-content/uploads/N_Queen_Problem.jpg",
     path: "/nqueen",
   },

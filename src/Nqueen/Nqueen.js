@@ -78,9 +78,9 @@ export const Nqueen = () => {
   return (
     <div className="main-container">
       <div className="navbar">
-        <h1>Nqueen Visualizer</h1>
+        <h1>Solve N-queen (8x8)</h1>
         <h3 style={{ color: "red" }}>
-          Left Click to place Queen , Right click to remove Queen
+          Left Click to place Queen , Right click to remove Queen .
         </h3>
         <div className="button-container">
           <Button
@@ -89,7 +89,7 @@ export const Nqueen = () => {
               navigate("/");
             }}
           >
-            Home
+            Go to Home
           </Button>
           <Button
             variant="contained"
@@ -143,8 +143,8 @@ export const Nqueen = () => {
         )}
       </div>
       <h3 style={{ color: "red" }}>
-        Rules : Two Queens should not be on same row , column or diagonal . If 8
-        queens are placed then it is successful !
+        Rules : More than one Queen cannot be on same row , column or diagonal .
+        If 8 queens are placed ,Nqueen Problem is solved .
       </h3>
     </div>
   );

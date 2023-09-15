@@ -2,14 +2,14 @@ export const algorithms = [
   {
     id: 0,
     name: "Sorting",
-    info: "Visualize bubble sort , insertion sort and selection sort algorithms ",
+    info: "Visualize bubble sort , insertion sort , selection sort and bogo sort algorithms ",
     img: "https://visualgo.net/img/png/sorting.png",
     path: "/sort",
   },
   {
     id: 1,
     name: "Nqueen",
-    info: "Visualize Nqueen problem by your self . Place Queens and solve ",
+    info: "Place Queens and solve N-queen problem for 8x8 ",
     img: "https://media.geeksforgeeks.org/wp-content/uploads/N_Queen_Problem.jpg",
     path: "/nqueen",
   },

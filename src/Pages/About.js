@@ -20,10 +20,12 @@ export const About = () => {
         </div>
         <div className="sub-container">
           <h2 style={{ textAlign: "center", color: "#1976D2" }}>
-            Made by Abhas K
+            Made by Abhas Khanal
           </h2>
+
           <h3 style={{ textAlign: "center" }}>
-            - Algorithms used : Bubble Sort ,Selection Sort,Insertion Sort, Binary Search , Backtracking
+            - Algorithms used : Bubble Sort ,Selection Sort,Insertion Sort,Bogo
+            Sort, Binary Search , N-Queen (For Checking )
           </h3>
           <h3 style={{ textAlign: "center" }}>
             - This project was inspired by{" "}
@@ -35,8 +37,7 @@ export const About = () => {
             </a>
           </h3>
           <Alert severity="info">
-            This Website isn't very responsive so algorithm visualization might
-            not look good on mobile !
+            This Website might not look good on mobile !
           </Alert>
         </div>
       </main>

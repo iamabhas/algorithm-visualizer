@@ -17,10 +17,13 @@ export async function bogoSort(array, setIsRunning, speed, delay, bars) {
     }
 
     for (let i = 0; i < array.length; i++) {
-      bars[i].style.backgroundColor = "#26751F";
+      bars[i].style.backgroundColor = "#101d42";
     }
 
     await delay(speed);
+  }
+  for (let i = 0; i < array.length; i++) {
+    bars[i].style.backgroundColor = "#26751F";
   }
 
   setIsRunning(false);

@@ -11,9 +11,9 @@ export const Sort = () => {
   const [isRunning, setIsRunning] = useState(false);
   const [resetStatus, setResetStatus] = useState(true);
 
-  const arraySize = 70;
+  const arraySize = 65;
   let navigate = useNavigate();
-  let speed = 15;
+  let speed = 14;
   let bars = document.getElementsByClassName("bar");
   const delay = (ms) => {
     return new Promise((resolve) => setTimeout(resolve, ms));
@@ -47,8 +47,7 @@ export const Sort = () => {
         <div className="navbar">
           <h1>Sorting Visualizer</h1>
           <h3 style={{ color: "red" }}>
-            ! The time complexity of bogo sort is O((n+1)!) which is unsolvable
-            and will run on a loop . Press Home button to stop !
+              Press " Go Back/Stop " button to stop !
           </h3>
           <div className="button-container">
             <Button
@@ -131,7 +130,12 @@ export const Sort = () => {
               );
             })}
           </div>
+         
         </div>
+        <h2 style={{ color: "red",textAlign:"center",margin:"1.3rem" }}>
+            ! The time complexity of bogo sort is O((n+1)!) which is unsolvable
+            and will run on a loop !
+          </h2>
       </div>
     </>
   );

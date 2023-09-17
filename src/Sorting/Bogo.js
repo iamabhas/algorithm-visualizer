@@ -171,7 +171,7 @@ export const Bogo = () => {
           {isSorted(randomArray) ? (
             <span style={{ color: "green" }}>Sorted !</span>
           ) : (
-            <span style={{ color: "red" }}>Sorting...</span>
+            <span style={{ color: "red" }}>Not Sorted...!</span>
           )}
         </h2>
         <h3 style={{ textAlign: "center" }}>

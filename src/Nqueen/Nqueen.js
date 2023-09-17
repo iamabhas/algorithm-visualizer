@@ -6,7 +6,7 @@ export const Nqueen = () => {
   const [boardArray, setBoardArray] = useState([]);
   const size = 8;
   let navigate = useNavigate();
-
+  const [queenCount, setQueenCount] = useState(0);
   const generateBoard = (size) => {
     let newArray = new Array(size).fill("").map(() => new Array(size).fill(""));
     setBoardArray(newArray);
@@ -14,6 +14,9 @@ export const Nqueen = () => {
 
   const isSafe = (board, row, col) => {
     const size = board.length;
+    if (board[row][col] === "Q") {
+      return true;
+    }
 
     // Check column
     for (let i = 0; i < size; i++) {
@@ -63,9 +66,13 @@ export const Nqueen = () => {
   const handleQueenPlacement = (row, col) => {
     const newBoard = [...boardArray];
     if (isSafe(newBoard, row, col)) {
-      newBoard[row][col] = "Q";
+      if (newBoard[row][col] !== "Q") {
+        newBoard[row][col] = "Q";
+        setQueenCount(queenCount + 1);
+      }
     } else {
       alert("Invalid move! Can't Place Queen !");
+      setQueenCount(queenCount - 1);
     }
 
     setBoardArray(newBoard);
@@ -73,7 +80,14 @@ export const Nqueen = () => {
 
   useEffect(() => {
     generateBoard(size);
+    setQueenCount(0);
   }, []);
+
+  useEffect(() => {
+    if (queenCount === 8) {
+      alert("CONGRATULATIONS ! YOU PLACED 8 QUEENS !");
+    }
+  }, [queenCount, boardArray]);
 
   return (
     <div className="main-container">
@@ -96,6 +110,7 @@ export const Nqueen = () => {
             onClick={() => {
               const newBoard = boardArray.map((row) => row.map((column) => ""));
               setBoardArray(newBoard);
+              setQueenCount(0);
             }}
           >
             Clear Board
@@ -123,6 +138,7 @@ export const Nqueen = () => {
                 e.preventDefault();
                 const newBoard = [...boardArray];
                 newBoard[rindex][cindex] = ""; // Remove queen
+                setQueenCount(queenCount - 1);
                 setBoardArray(newBoard);
               }}
               style={{

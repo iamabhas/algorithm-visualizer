@@ -5,6 +5,7 @@ import { Error } from "./Pages/Error";
 import { Sort } from "./Sorting/Sort";
 import { Nqueen } from "./Nqueen/Nqueen";
 import { Bsearch } from "./BinarySearch/Bsearch";
+import { Bogo } from "./Sorting/Bogo";
 import "./index.css";
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/sort" element={<Sort />}></Route>
         <Route path="/bsearch" element={<Bsearch />}></Route>
         <Route path="/nqueen" element={<Nqueen />}></Route>
+        <Route path="/bogo" element={<Bogo />}></Route>
       </Routes>
     </Router>
   );

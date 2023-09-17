@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Sort.css";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
 import { bubbleSort } from "./BubbleSort";
 import { selectionSort } from "./SelectionSort";
@@ -46,8 +46,8 @@ export const Sort = () => {
       <div className="main-container">
         <div className="navbar">
           <h1>Sorting Visualizer</h1>
-          <h3 style={{ color: "red" }}>
-              Press " Go Back/Stop " button to stop !
+          <h3 style={{ textAlign: "center", color: "red" }}>
+            Click on "Stop Sorting to Exit Sort"
           </h3>
           <div className="button-container">
             <Button
@@ -56,12 +56,26 @@ export const Sort = () => {
                 navigate("/");
               }}
             >
-              Go Back / Stop
+              Go to Home Page
             </Button>
           </div>
         </div>
+        <h4 style={{ color: "red", textAlign: "center", margin: "1.3rem" }}>
+          ! The time complexity of bogo sort is O((n+1)!) which is unsolvable
+          and will run on a loop ! Check bogo stats :{" "}
+          <Link to="/bogo">Stats</Link>
+        </h4>
         <div className="sort-body">
           <div className="button-container">
+            <Button
+              variant="contained"
+              onClick={() => {
+                navigate("/");
+              }}
+              disabled={!isRunning}
+            >
+              Stop Sorting
+            </Button>
             <Button
               variant="contained"
               onClick={() => {
@@ -130,12 +144,7 @@ export const Sort = () => {
               );
             })}
           </div>
-         
         </div>
-        <h2 style={{ color: "red",textAlign:"center",margin:"1.3rem" }}>
-            ! The time complexity of bogo sort is O((n+1)!) which is unsolvable
-            and will run on a loop !
-          </h2>
       </div>
     </>
   );

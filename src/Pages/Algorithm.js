@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-const Algorithm = ({ name, img, info, path }) => {
+const Algorithm = ({ name, img, path }) => {
   let navigate = useNavigate();
   let newPath = path;
   return (
@@ -16,8 +16,7 @@ const Algorithm = ({ name, img, info, path }) => {
         </div>
 
         <div>
-          <h1>{name}</h1>
-          <p>{info}</p>
+          <h2>{name}</h2>
         </div>
       </div>
     </>

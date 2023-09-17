@@ -1,4 +1,5 @@
-.array-container {
+.array-container,
+.bogo-container {
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -17,4 +18,8 @@
 }
 .button-container button {
   margin: 0.2rem;
+}
+
+.bogo-container {
+  height: 210px;
 }

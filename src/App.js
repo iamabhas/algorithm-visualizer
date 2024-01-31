@@ -6,6 +6,9 @@ import { Sort } from "./Sorting/Sort";
 import { Nqueen } from "./Nqueen/Nqueen";
 import { Bsearch } from "./BinarySearch/Bsearch";
 import { Bogo } from "./Sorting/Bogo";
+import NqueenViz from "./NqueenVisualizer/NqueenViz";
+import Cipher from "./Cipher/Cipher";
+import Toh from "./TowerOfHanoi/toh";
 import "./index.css";
 function App() {
   return (
@@ -18,6 +21,9 @@ function App() {
         <Route path="/bsearch" element={<Bsearch />}></Route>
         <Route path="/nqueen" element={<Nqueen />}></Route>
         <Route path="/bogo" element={<Bogo />}></Route>
+        <Route path="/cipher" element={<Cipher />}></Route>
+        <Route path="/nqueenviz" element={<NqueenViz />}></Route>
+        <Route path="/toh" element={<Toh />}></Route>
       </Routes>
     </Router>
   );

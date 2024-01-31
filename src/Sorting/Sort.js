@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./Sort.css";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
 import { bubbleSort } from "./BubbleSort";
 import { selectionSort } from "./SelectionSort";
 import { insertionSort } from "./InsertionSort";
-import { bogoSort } from "./BogoSort";
+import { mergeSort } from "./MergeSort";
+
 export const Sort = () => {
   const [randomArray, setRandomArray] = useState([]);
   const [isRunning, setIsRunning] = useState(false);
@@ -13,7 +14,7 @@ export const Sort = () => {
 
   const arraySize = 65;
   let navigate = useNavigate();
-  let speed = 14;
+  let speed = 12;
   let bars = document.getElementsByClassName("bar");
   const delay = (ms) => {
     return new Promise((resolve) => setTimeout(resolve, ms));
@@ -46,9 +47,6 @@ export const Sort = () => {
       <div className="main-container">
         <div className="navbar">
           <h1>Sorting Visualizer</h1>
-          <h3 style={{ textAlign: "center", color: "red" }}>
-            Click on "Stop Sorting to Exit Sort"
-          </h3>
           <div className="button-container">
             <Button
               variant="contained"
@@ -60,22 +58,8 @@ export const Sort = () => {
             </Button>
           </div>
         </div>
-        <h4 style={{ color: "red", textAlign: "center", margin: "1.3rem" }}>
-          ! The time complexity of bogo sort is O((n+1)!) which is unsolvable
-          and will run on a loop ! Check bogo stats :{" "}
-          <Link to="/bogo">Stats</Link>
-        </h4>
         <div className="sort-body">
           <div className="button-container">
-            <Button
-              variant="contained"
-              onClick={() => {
-                navigate("/");
-              }}
-              disabled={!isRunning}
-            >
-              Stop Sorting
-            </Button>
             <Button
               variant="contained"
               onClick={() => {
@@ -120,11 +104,20 @@ export const Sort = () => {
               variant="contained"
               color="error"
               onClick={() => {
-                bogoSort(randomArray, setIsRunning, speed, delay, bars);
+                setIsRunning(true);
+                mergeSort(
+                  randomArray,
+                  0,
+                  randomArray.length - 1,
+                  bars,
+                  delay,
+                  speed,
+                  setIsRunning
+                );
               }}
               disabled={isRunning}
             >
-              Bogo Sort!
+              Merge Sort !
             </Button>
           </div>
           <div className="array-container">

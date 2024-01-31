@@ -1,5 +1,4 @@
-//SWAP LOGIC
-async function swap(arr, i, j, bars, delay, speed) {
+export const swap = async (arr, i, j, bars, delay, speed) => {
   for (let k = 0; k < bars.length; k++) {
     bars[k].style.backgroundColor = "#101d42";
   }
@@ -15,10 +14,9 @@ async function swap(arr, i, j, bars, delay, speed) {
     bars[i].style.backgroundColor = "#26751F";
   }
   return arr;
-}
+};
 
-//SELECTION SORT LOGIC
-export async function selectionSort(arr, bars, delay, speed, setIsRunning) {
+export const selectionSort = async (arr, bars, delay, speed, setIsRunning) => {
   setIsRunning(true);
   var i, j, min_idx;
   for (i = 0; i < arr.length - 1; i++) {
@@ -32,4 +30,4 @@ export async function selectionSort(arr, bars, delay, speed, setIsRunning) {
     swap(arr, min_idx, i, bars, delay, speed);
   }
   setIsRunning(false);
-}
+};

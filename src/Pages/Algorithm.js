@@ -16,7 +16,7 @@ const Algorithm = ({ name, img, path }) => {
         </div>
 
         <div>
-          <h2>{name}</h2>
+          <h3>{name}</h3>
         </div>
       </div>
     </>

@@ -93,10 +93,10 @@ export const Bogo = () => {
     <>
       <div className="main-container">
         <div className="navbar">
-          <h1>Bogo Sort Stats</h1>
+          <h1>Bogo Sort Numbers</h1>
           <div className="button-container">
             <label style={{ fontSize: "20px", margin: "0.5rem" }}>
-              Enter Array Size
+              Choose Array Size
             </label>
             <select
               value={currentSize}

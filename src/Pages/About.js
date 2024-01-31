@@ -25,7 +25,7 @@ export const About = () => {
 
           <h3 style={{ textAlign: "center" }}>
             - Algorithms used : Bubble Sort ,Selection Sort,Insertion Sort,Bogo
-            Sort, Binary Search , N-Queen (For Checking )
+            Sort, Merge Sort, Vigenère cipher , Nqueen , Binary Search
           </h3>
           <h3 style={{ textAlign: "center" }}>
             - This project was inspired by{" "}

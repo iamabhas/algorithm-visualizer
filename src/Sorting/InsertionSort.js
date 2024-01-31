@@ -1,4 +1,10 @@
-export async function insertionSort(array, setIsRunning, delay, speed, bars) {
+export const insertionSort = async (
+  array,
+  setIsRunning,
+  delay,
+  speed,
+  bars
+) => {
   setIsRunning(true);
   for (let i = 1; i < array.length; i++) {
     let key = array[i];
@@ -25,4 +31,4 @@ export async function insertionSort(array, setIsRunning, delay, speed, bars) {
   }
   setIsRunning(false);
   return array;
-}
+};

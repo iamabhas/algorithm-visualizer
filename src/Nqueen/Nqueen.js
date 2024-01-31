@@ -138,8 +138,10 @@ export const Nqueen = () => {
                 e.preventDefault();
                 const newBoard = [...boardArray];
                 newBoard[rindex][cindex] = ""; // Remove queen
-                setQueenCount(queenCount - 1);
-                setBoardArray(newBoard);
+                if (boardArray[rindex][cindex] !== "") {
+                  setQueenCount(queenCount - 1);
+                  setBoardArray(newBoard);
+                }
               }}
               style={{
                 backgroundColor: `${

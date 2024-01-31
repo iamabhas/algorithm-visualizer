@@ -42,10 +42,10 @@
   flex-direction: column;
   margin: 2rem;
   align-items: center;
-  padding: 1rem;
+  padding: 1.5rem;
   flex-wrap: wrap;
-  width: 270px;
-  height: 220px;
+  width: max-content;
+  height: max-content;
   cursor: pointer;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   transition: all 0.3s ease-in-out;

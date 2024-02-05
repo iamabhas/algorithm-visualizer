@@ -86,6 +86,8 @@ export const Nqueen = () => {
   useEffect(() => {
     if (queenCount === 8) {
       alert("CONGRATULATIONS ! YOU PLACED 8 QUEENS !");
+      generateBoard(8);
+      setQueenCount(0);
     }
   }, [queenCount, boardArray]);
 
@@ -136,10 +138,10 @@ export const Nqueen = () => {
               }}
               onContextMenu={(e) => {
                 e.preventDefault();
-                const newBoard = [...boardArray];
-                newBoard[rindex][cindex] = ""; // Remove queen
-                if (boardArray[rindex][cindex] !== "") {
-                  setQueenCount(queenCount - 1);
+                const newBoard = boardArray.map((row) => [...row]);
+                if (newBoard[rindex][cindex] === "Q") {
+                  newBoard[rindex][cindex] = "";
+                  setQueenCount((prevCount) => prevCount - 1);
                   setBoardArray(newBoard);
                 }
               }}

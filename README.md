@@ -24,6 +24,10 @@ npm run start
   <li><a href="https://github.com/iamabhas/algorithm-visualizer/blob/main/src/Sorting/BubbleSort.js">Bubble Sort</a></li>
   <li><a href="https://github.com/iamabhas/algorithm-visualizer/blob/main/src/Sorting/InsertionSort.js">Insertion Sort</a></li>
   <li><a href="https://github.com/iamabhas/algorithm-visualizer/blob/main/src/Sorting/SelectionSort.js">Selection Sort</li>
-  <li><a href="https://github.com/iamabhas/algorithm-visualizer/blob/main/src/Sorting/BogoSort.js">Bogo Sort</li>
+  <li><a href="https://github.com/iamabhas/algorithm-visualizer/blob/main/src/Sorting/MergeSort.js">Merge Sort</li>
+  <li><a href="https://github.com/iamabhas/algorithm-visualizer/blob/main/src/Cipher/Table.js">Vigenere Cipher</li>
+  <li><a href="https://github.com/iamabhas/algorithm-visualizer/blob/main/src/Sorting/Bogo.js">Bogo Sort</li>
   <li><a href="https://github.com/iamabhas/algorithm-visualizer/tree/main/src/BinarySearch">Binary Search</li>
+    <li><a href="https://github.com/iamabhas/algorithm-visualizer/blob/main/src/TowerOfHanoi/toh.js">Tower of Hanoi</li>
+      <li><a href="https://github.com/iamabhas/algorithm-visualizer/blob/main/src/NqueenVisualizer/NqueenViz.js">N-queen</li>
 </ul>

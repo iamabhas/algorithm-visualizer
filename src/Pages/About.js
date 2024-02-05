@@ -21,6 +21,7 @@ export const About = () => {
         <div className="sub-container">
           <h2 style={{ textAlign: "center", color: "#1976D2" }}>
             Made by Abhas Khanal
+            <div>[Github - @iamabhas]</div>
           </h2>
 
           <h3 style={{ textAlign: "center" }}>

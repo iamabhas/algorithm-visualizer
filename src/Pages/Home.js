@@ -1,10 +1,20 @@
 import React from "react";
-import { Button } from "@mui/material";
-import { algorithms } from "../data";
+import {
+  List,
+  ListItem,
+  ListItemText,
+  ListItemAvatar,
+  Avatar,
+  Button,
+  Paper,
+} from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import Algorithm from "./Algorithm";
+import { algorithms } from "../data";
+import { FcAdvance } from "react-icons/fc";
+
 export const Home = () => {
   let navigate = useNavigate();
+
   return (
     <>
       <main className="main-container">
@@ -16,7 +26,7 @@ export const Home = () => {
               style={{ textDecoration: "none" }}
               href="https://github.com/iamabhas/algorithm-visualizer"
             >
-              https://github.com/iamabhas/algorithm-visualizer
+              github.com/iamabhas/algorithm-visualizer
             </a>
           </h4>
           <Button
@@ -29,9 +39,35 @@ export const Home = () => {
           </Button>
         </div>
         <div className="subContainer">
-          {algorithms.map((algorithm) => {
-            return <Algorithm {...algorithm} key={algorithm.id} />;
-          })}
+          <Paper>
+            <List aria-label="algorithms list">
+              {algorithms.map((algorithm) => (
+                <ListItem
+                  key={algorithm.id}
+                  secondaryAction={
+                    <Button
+                      onClick={() => navigate(algorithm.path)}
+                      endIcon={<FcAdvance />}
+                    >
+                      View
+                    </Button>
+                  }
+                >
+                  <ListItemAvatar>
+                    <Avatar
+                      alt={algorithm.name}
+                      src={algorithm.img}
+                      variant="square"
+                    />
+                  </ListItemAvatar>
+                  <ListItemText
+                    primary={algorithm.name}
+                    primaryTypographyProps={{ style: { fontWeight: "bold" } }}
+                  />
+                </ListItem>
+              ))}
+            </List>
+          </Paper>
         </div>
       </main>
     </>

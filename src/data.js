@@ -39,7 +39,7 @@ export const algorithms = [
   {
     id: 7,
     name: "Tower of Hanoi Visualizer (In Progress...)",
-    img: "https://www.boardinfinity.com/blog/content/images/2022/10/Untitled-design.jpg",
+    img: "https://blog-c7ff.kxcdn.com/blog/wp-content/uploads/2016/12/tower-02-1.jpg",
     path: "/toh",
   },
   {

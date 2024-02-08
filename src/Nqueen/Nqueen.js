@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Button } from "@mui/material";
+import {
+  Button,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+} from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import "./Nqueen.css";
 export const Nqueen = () => {
@@ -7,9 +14,20 @@ export const Nqueen = () => {
   const size = 8;
   let navigate = useNavigate();
   const [queenCount, setQueenCount] = useState(0);
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const [dialogMessage, setDialogMessage] = useState("");
   const generateBoard = (size) => {
     let newArray = new Array(size).fill("").map(() => new Array(size).fill(""));
     setBoardArray(newArray);
+  };
+
+  const handleOpenDialog = (message) => {
+    setDialogMessage(message);
+    setDialogOpen(true);
+  };
+
+  const handleCloseDialog = () => {
+    setDialogOpen(false);
   };
 
   const isSafe = (board, row, col) => {
@@ -71,8 +89,7 @@ export const Nqueen = () => {
         setQueenCount(queenCount + 1);
       }
     } else {
-      alert("Invalid move! Can't Place Queen !");
-      setQueenCount(queenCount - 1);
+      handleOpenDialog("Invalid move! Can't place queen here.");
     }
 
     setBoardArray(newBoard);
@@ -85,7 +102,7 @@ export const Nqueen = () => {
 
   useEffect(() => {
     if (queenCount === 8) {
-      alert("CONGRATULATIONS ! YOU PLACED 8 QUEENS !");
+      handleOpenDialog("CONGRATULATIONS! YOU SOLVED THE N-QUEEN PROBLEM!");
       generateBoard(8);
       setQueenCount(0);
     }
@@ -126,7 +143,7 @@ export const Nqueen = () => {
           gridTemplateColumns: `repeat(${size}, 70px)`,
           gridTemplateRows: `repeat(${size}, 70px)`,
         }}
-        z
+        data-z="true"
       >
         {boardArray.map((row, rindex) =>
           row.map((column, cindex) => (
@@ -162,6 +179,15 @@ export const Nqueen = () => {
           ))
         )}
       </div>
+      <Dialog open={dialogOpen} onClose={handleCloseDialog}>
+        <DialogTitle>{"Nqueen Visualizer"}</DialogTitle>
+        <DialogContent>
+          <DialogContentText>{dialogMessage}</DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleCloseDialog}>OK</Button>
+        </DialogActions>
+      </Dialog>
       <h3 style={{ color: "red" }}>
         Rules : More than one Queen cannot be on same row , column or diagonal .
         If 8 queens are placed ,Nqueen Problem is solved .
